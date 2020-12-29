@@ -1,0 +1,9 @@
+.header-div{
+    height: 100px;
+}
+.logo, .logo-img{
+    height: 100%;
+}
+.logo{
+    padding: 10px 0;
+}

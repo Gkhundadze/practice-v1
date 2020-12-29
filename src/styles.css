@@ -1,1 +1,330 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face{
+    font-family: "RobotoRegular";
+    src: url(./assets/fonts/RobotoRegular/Roboto-Regular.svg);
+    src: url(./assets/fonts/RobotoRegular/Roboto-Regular.svg);
+    src: url(./assets/fonts/RobotoRegular/Roboto-Regular.ttf);
+    src: url(./assets/fonts/RobotoRegular/Roboto-Regular.woff);
+    src: url(./assets/fonts/RobotoRegular/Roboto-Regular.woff2);
+}
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;}
+body {
+	line-height: 1;}
+ol, ul {
+	list-style: none;}
+blockquote, q {
+	quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;}
+a{
+	text-decoration: none;
+	color: inherit;}
+*{
+	box-sizing: border-box;}
+/* RESET */
+.active{
+    opacity: 0.5;
+}
+/* DISPLAY  Property*/
+.disp-block{
+    display: block;
+}
+.disp-flex{
+    display: flex;
+}
+.disp-in-block{
+    display: inline-block;
+}
+.disp-inline{
+    display: inline;
+}
+/* DISPLAY Property */
+
+/* POSITIONS */
+.pos-relative{
+    position: relative;
+}
+.pos-absolute{
+    position: absolute;
+}
+.pos-fixed{
+    position: fixed;
+}
+.pos-static{
+    position: static;
+}
+.pos-sticky{
+    position: sticky;
+}
+/* POSITIONS */
+.my-container{
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+}
+.just-sb{
+    justify-content: space-between;
+}
+.just-c{
+    justify-content: center;
+}
+.align-c{
+    align-items: center;
+}
+/* TEXT */
+.text-align-c{
+    text-align: center;
+}
+.text-u{
+    text-transform: uppercase;
+}
+.text-bold{
+    font-weight: bold;
+}
+
+.vert-align-m{
+    vertical-align: middle;
+}
+.text-trans-u{
+    text-transform: uppercase;
+}
+.text-trans-c{
+    text-transform: capitalize;
+}
+
+/* COLORS */
+.cw{
+    color: #ffffff !important;
+}
+.cb{
+    color: black !important;
+}
+/* BACKGROUND-COLORS */
+.bgc-white{
+    background-color: #ffffff;
+}
+.bgc-black{
+    background-color: black;
+}
+/* SIZES */
+.wid-100{
+    width: 100%;
+}
+@import "var.css";
+body{
+    font-family: "RobotoRegular";
+}
+.header-div{
+    height: 100px;
+}
+.logo,.logo-img{
+    height: 100%;
+}
+.logo{
+    padding: 10px 0;
+}
+.social-box{
+    padding: 0 30px;
+}
+.social-box:first-child{
+    padding-left: 0;
+}
+.social-img{
+    width: 30px;
+    height: 30px;
+}
+.nav-div{
+    color: #3D58A6;
+    font-size: 24px;
+}
+.nav-a{
+    margin-left: 8px;
+}
+.nav-a:first-child{
+    margin-left: 0;
+}
+.banner-section{
+    background-color: #E6E6E6;
+    padding: 30px 0;
+}
+.social-box{
+    border-right-color: #3D58A6;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+.banner-img{
+    max-width: 1170px;
+}
+.banner-text-left{
+    left: 2.5%;
+    bottom: 5%;
+}
+.banner-text-left ul{
+    font-size: 24px;
+}
+.banner-text-right{
+    right: 2.5%;
+    bottom: 5%;
+}
+.banner-text-right img{
+    height: 30px;
+    max-width: 100px;
+}
+.social-box:last-child{
+    border: 0;
+    padding-right: 0;
+}
+.video-section{
+    background-color: #363E97;
+}
+.textbox-parrent{
+    padding-bottom: 90px;
+}
+.text-box{
+    max-width: 570px;
+    height: 320px;
+}
+.title{
+    padding: 45px 0;
+    font-size: 24px;
+}
+.video-section-link:first-child{
+    border-right: 1px solid #ffffff;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.video-section-link{
+    padding: 1px;
+}
+.cards-section{
+    background-color: #BDCCD4;
+}
+.cards-title{
+    color: #3D58A6;
+}
+.cards-section .video-section-link:first-child{
+    border-right: 1px solid #3D58A6;
+    color: #3D58A6;
+}
+.card-box-parrent{
+    padding-bottom: 90px;
+    font-size: 24px;
+    flex-wrap: wrap;
+}
+.card-box{
+    max-width: 270px;
+    height: 270px;
+}
+.card-box-img{
+    height: 210px;
+}
+.card-box-title{
+    background-color: #E6E6E6;
+    line-height: 60px;
+    padding-left: 5%;
+    white-space: nowrap;
+}
+
+.featured-section{
+    background-color: #E6E6E6;
+    height: 100%;
+    padding-bottom: 90px;
+}
+.featured-section-parrent-div{
+    overflow: hidden;
+}
+.featured-section .video-section-link:first-child{
+    border-right: 1px solid black;
+}
+.featured-div-box{
+    max-width: 570px;
+    height: 225px;
+    background-color: #F2F2F2;
+    padding: 2%;
+}
+.featured-div-box h2, button{
+    color: #3D58A6;
+}
+.featured-div-box-child{
+    height: 130px;
+    margin-top: 3%;
+}
+.featured-div-box-child img{
+    display: block;
+    
+}
+.featured-div-box-child p{
+    margin-left: 5%;
+    font-size: 22px;
+    line-height: 25px;
+    color: #58595B;
+    
+}
+.read-more-btn{
+    right: 2.5%;
+    bottom: 5%;
+    border: none;
+    cursor: pointer;
+}
+footer{
+    height: 60px;
+    font-size: 12px;
+}
+.news-section{
+    padding-top:60px ;
+    background-color: #BDCCD4;
+}
+.news-section button{
+    border: 0;
+    left: 50%;
+    bottom: 2.5%;
+    transform: translateX(-50%);
+    background-color: #83939B;
+    max-width: 135px;
+    height: 60px;
+    font-size: 18px;
+}
+.card-box:nth-child(n+5){
+    margin-top: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
