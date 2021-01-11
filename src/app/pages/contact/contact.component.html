@@ -1,17 +1,8 @@
-
+<router-outlet></router-outlet>
 <main class="main">
     <div class="navigation-box red">
       <div class="container clearfix">
-        <ul class="navigation-box-ul float-left">
-          <li class="navigation-box-li inline-block white">
-            <a href="#" class="navigation-box-a inline-block">contact</a>
-          </li>
-        </ul>
-        <ul class="see-next-ul float-right">
-          <li class="see-next-li white">
-            <a href="#" class="see-next-a">see next</a>
-          </li>
-        </ul>
+        <a [routerLink]='["/contact/form"]'>Go to forms</a>
       </div>
     </div>
     <section class="map-block">
@@ -20,26 +11,10 @@
     <section class="form-block">
       <div class="container form-wrapper clearfix">
         <ul class="left-block float-left"></ul>
-        <form class="right-block float-right">
-          <div class="form-row">
-            <label for="name" class="label">name</label>
-            <input type="text" id="name" placeholder="...type your name">
-          </div>
-          <div class="form-row">
-            <label for="email" class="label">e-mail</label>
-            <input type="text" id="email" placeholder="...type your e-mail">
-          </div>
-          <div class="form-row">
-            <label for="subject" class="label">subject</label>
-            <input type="text" id="subject" placeholder="...type your subject">
-          </div>
-          <div class="form-row">
-            <label for="massage" class="label">massage</label>
-            <textarea type="text" id="massage" placeholder="...type your massage"></textarea>
-          </div>
-          <button class="send">send</button>
-        </form>
+        <!-- here was form tag -->
+        
       </div>
     </section>
   </main>
+  
   

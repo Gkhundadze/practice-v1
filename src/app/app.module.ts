@@ -8,6 +8,7 @@ import { FooterComponent } from './pages/components-global/footer/footer.compone
 import { NewsComponent } from './pages/news/news.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +26,9 @@ import { ContactComponent } from './pages/contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

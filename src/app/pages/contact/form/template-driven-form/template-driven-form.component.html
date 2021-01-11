@@ -1,0 +1,34 @@
+<form class="right-block float-right" #newUserForm="ngForm" (submit)="onSubmit(newUserForm)">
+    <label for="nickName" class="label">nickName</label>
+    <input type="text" placeholder="Nick name" [(ngModel)]="nickName" name="nickName" minlength="5">
+    <div class="form-row">
+      <label for="userName" class="label">userName</label>
+      <input type="text" name="userName" placeholder="...type your name" required minlength="5" maxlength="25"
+        [(ngModel)]="userName" #pickedName="ngModel" [class.red]="!pickedName.valid && pickedName.touched">
+      {{pickedName.valid}}
+      <div *ngIf="!pickedName.valid && pickedName.touched">
+        User name is required!
+      </div>
+    </div>
+    <div class="form-row">
+      <label for="email" class="label">e-mail</label>
+      <input type="email" id="email" placeholder="...type your e-mail" required [(ngModel)]='email' #userEmail="ngModel"
+        name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      {{userEmail.valid}}
+      <div *ngIf="!userEmail.valid && userEmail.touched">
+        Email is required!
+      </div>
+    </div>
+  
+    <label for="password" class="label">Password</label>
+    <input type="password" name="password" [(ngModel)]='password' placeholder="...Type Password" required minlength="8"
+      #userPassword='ngModel'>
+    {{userPassword.valid}}
+    {{userPassword.value}}
+    <div *ngIf="!userPassword.valid && userPassword.touched">
+      Password is required!
+    </div>
+    <button style="float: right;" class="send" [disabled]='!userPassword.valid'
+      [class.active-button]='userPassword.valid'>send</button>
+  </form>
+  <a [routerLink]="['/contact/form']">go back</a>
