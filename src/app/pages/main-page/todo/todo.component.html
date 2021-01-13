@@ -1,0 +1,14 @@
+<div *ngIf="!apiDataRender">
+    <div class="lds-circle"><div></div></div>
+                                        <!-- LOADER -->
+</div>
+
+<div class="todo-wrapper" *ngFor="let item of apiDataRender">
+    <div class="item">
+        <input class="checkbox" type="checkbox" [checked]='item.completed'>
+        <span class="item">{{item.text}}</span>
+        <button>&times;</button>
+    </div>
+    
+                                        <!-- ITEM RENDERING -->
+</div> 

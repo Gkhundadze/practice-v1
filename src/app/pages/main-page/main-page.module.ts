@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { MainPageRoutingModule } from './main-page-routing.module';
 import { MainComponent } from './main/main.component';
+import { TodoComponent } from './todo/todo.component';
+
 
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [MainComponent, TodoComponent],
   imports: [
     CommonModule,
-    MainPageRoutingModule
+    MainPageRoutingModule,
   ]
 })
 export class MainPageModule { }

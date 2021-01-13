@@ -9,25 +9,21 @@ const routes: Routes = [
   {
     path: '',
     component:ContactComponent,
-    children: [
-      {
-        path: 'form',
-        component: FormComponent,
-        children: [
-          {
-            path:'driven',
-            component: TemplateDrivenFormComponent
-          },
-          {
-            path:'reactive',
-            component: ReactiveComponent
-          }
-        ]
-      }
-    ]
   },
   {
-    
+    path: 'form',
+    component: FormComponent,
+    children: [
+      {
+        path:'driven',
+        component: TemplateDrivenFormComponent
+      },
+      {
+        path:'reactive',
+        component: ReactiveComponent
+      }
+    ]
+
   }
   
   
