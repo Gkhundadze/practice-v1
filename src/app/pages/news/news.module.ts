@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { NewsRoutingModule } from './news-routing.module';
+import { DetailedComponent } from './detailed/detailed.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [DetailedComponent],
   imports: [
     CommonModule,
     NewsRoutingModule

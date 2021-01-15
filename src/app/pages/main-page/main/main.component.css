@@ -1,0 +1,9 @@
+.features{
+    display: flex;
+    justify-content: space-around;
+}
+.todos, .calculator{
+    margin-bottom: 10px;
+    font-size: 18px;
+    
+}

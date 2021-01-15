@@ -1,6 +1,11 @@
 <section class="banner-section">
     <div class="my-container">
-        <a [routerLink]="['todos']">ToDo List service</a>
+        <div class="features">
+            <a class="todos" [routerLink]="['todos']">ToDo List service</a>
+           
+            <a class="calculator" [routerLink]="['calculator']">Simple Calculator</a>
+        </div>
+        
         <div class="banner-box pos-relative">
             <img src="../assets/images/banner/banner.jpg" alt="banner" class="banner-img wid-100">
             <div class="banner-text-left pos-absolute">
@@ -54,12 +59,19 @@
                 <p class="">view all news</p>
             </a>
         </div>
-        <div class="card-box-parrent disp-flex just-sb text-trans-u">
-            <article class="card-box wid-100">
-                <img src="../assets/images/card-section/img-1.jpg" class="card-box-img wid-100 disp-block">
-                <h2 class="card-box-title">typography lab</h2>
-            </article>
-            <article class="card-box wid-100">
+        <div  class="card-box-parrent disp-flex just-sb text-trans-u">
+
+            <div *ngFor='let item of newsToRender'>
+                <a [routerLink]="['/news/detailed']">
+                    <article class="card-box wid-100">
+                        <img [src]="item.imgUrl" class="card-box-img wid-100 disp-block">
+                        <h2 class="card-box-title">{{item.title}}</h2>
+                    </article>
+                </a>
+                
+            </div>
+            
+            <!-- <article class="card-box wid-100">
                 <img src="../assets/images/card-section/img-2.jpg" alt="card image" class="card-box-img wid-100 disp-block">
                 <h2 class="card-box-title">online marketing</h2>
             </article>
@@ -70,7 +82,7 @@
             <article class="card-box wid-100">
                 <img src="../assets/images/card-section/img-4.jpg" alt="card image" class="card-box-img wid-100 disp-block">
                 <h2 class="card-box-title">interface design</h2>
-            </article>
+            </article> -->
         </div>
     </div>
 </section>
