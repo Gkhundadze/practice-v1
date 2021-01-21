@@ -1,14 +1,15 @@
 <a [routerLink]="['/home']">Go Back</a>
+<!-- BACK BUTTON -->
 <div *ngIf="!apiDataRender">
     <div class="lds-circle"><div></div></div>
                                         <!-- LOADER -->
 </div>
 
-<div class="todo-wrapper" *ngFor="let item of apiDataRender">
+<div class="todo-wrapper" *ngFor="let item of apiDataRender; trackBy: trackByFn">
     <div class="item">
-        <input class="checkbox" type="checkbox" [checked]='item.completed'>
+        <input class="checkbox" type="checkbox" (change)='checkThisItem($event, item)' [checked]='item.completed'>
         <span class="item">{{item.text}}</span>
-        <button>&times;</button>
+        <button (click)='deleteItem(item)'>&times;</button>
     </div>
     
                                         <!-- ITEM RENDERING -->

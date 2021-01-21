@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ApiData } from 'src/app/interfaces/api-data';
 import { GetFromApiService } from 'src/app/sevices/get-from-api.service';
 
@@ -13,20 +14,41 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {
    this.getData();
-   
-   
     
   }
 
   getData():void {
     this.apiData.getData().subscribe((response) => {
-      console.log( 'from getFunction', response.data);
+ 
       this.apiDataRender = response.data;
-      console.log(this.apiDataRender);
+  
     })
   }
-
-
  
+  deleteItem(item){
+    this.apiData.removeItem(item.id).subscribe((res) => {
+      if(res.status ==='ok'){
+        this.getData();
+      }
+    })
+  }
+  checkThisItem(itemStatus, item){
+    if(!itemStatus.target.checked){
+      this.apiData.unCheckItem(item.id).subscribe((res)=>{
+        if(res.status ==='ok'){
+          this.getData();
+        }
+      })
+    }else{
+      this.apiData.checkItem(item.id).subscribe((res)=>{
+        if(res.status ==='ok'){
+          this.getData();
+        }
+      })
+    }   
+  }
+  trackByFn(index) {
+    return index;
+  }
 
 }
