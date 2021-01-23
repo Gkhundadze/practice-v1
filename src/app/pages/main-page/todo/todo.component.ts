@@ -1,3 +1,4 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiData } from 'src/app/interfaces/api-data';
@@ -38,6 +39,9 @@ export class TodoComponent implements OnInit {
   getData():void {
     this.apiData.getData().subscribe((response) => {
       this.apiDataRender = response.data;
+    }, (error)=>{
+      console.log(error);
+      
     })
   }
   deleteItem(item){
