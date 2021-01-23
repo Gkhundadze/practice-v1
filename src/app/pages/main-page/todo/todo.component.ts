@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiData } from 'src/app/interfaces/api-data';
 import { GetFromApiService } from 'src/app/sevices/get-from-api.service';
 
@@ -10,21 +10,34 @@ import { GetFromApiService } from 'src/app/sevices/get-from-api.service';
 })
 export class TodoComponent implements OnInit {
   public apiDataRender:ApiData[];
-  constructor(private apiData: GetFromApiService) { }
+  public inputForm:FormGroup;
+  constructor(
+    private apiData: GetFromApiService,
+    private fb: FormBuilder
+    
+    ) { }
 
   ngOnInit(): void {
    this.getData();
-    
+   this.inputForm = this.fb.group({
+     text: ["", [Validators.required]]
+   });
+  
+   
   }
-
+  submitForm(inputForm:FormGroup): void{
+    if(inputForm.valid){     
+      this.apiData.sendTaskToApi(inputForm.value).subscribe((res)=>{
+      })
+    }else{
+      alert('რამე ჩაწერე ბიჭო!');
+    }
+  }
   getData():void {
     this.apiData.getData().subscribe((response) => {
- 
       this.apiDataRender = response.data;
-  
     })
   }
- 
   deleteItem(item){
     this.apiData.removeItem(item.id).subscribe((res) => {
       if(res.status ==='ok'){
@@ -47,8 +60,5 @@ export class TodoComponent implements OnInit {
       })
     }   
   }
-  trackByFn(index) {
-    return index;
-  }
-
+  trackByFn(index) {return index;}
 }

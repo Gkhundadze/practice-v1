@@ -5,6 +5,7 @@ import { MainPageRoutingModule } from './main-page-routing.module';
 import { MainComponent } from './main/main.component';
 import { TodoComponent } from './todo/todo.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,6 +14,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
   imports: [
     CommonModule,
     MainPageRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MainPageModule { }

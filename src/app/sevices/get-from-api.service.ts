@@ -23,5 +23,8 @@ export class GetFromApiService {
   unCheckItem(id:string): Observable<any>{
     return this.httpClient.post('https://us-central1-js04-b4877.cloudfunctions.net/tasks/uncheck/'+id, {});
   }
+  sendTaskToApi(data:any): Observable<any>{
+    return this.httpClient.post('https://us-central1-js04-b4877.cloudfunctions.net/tasks/create', data);
+  }
 
 }

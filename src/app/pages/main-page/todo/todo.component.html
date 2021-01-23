@@ -1,8 +1,17 @@
 <a [routerLink]="['/home']">Go Back</a>
 <!-- BACK BUTTON -->
 <div *ngIf="!apiDataRender">
-    <div class="lds-circle"><div></div></div>
-                                        <!-- LOADER -->
+    <div class="lds-circle">
+        <div></div>
+    </div>
+    <!-- LOADER -->
+</div>
+<div class="input-wrapper-div">
+    <form [formGroup]='inputForm' (submit)='submitForm(inputForm)'>
+        <label for="newtask">Add Task</label>
+        <input formControlName='text' id="newtask" type="text" placeholder="...">
+        <button>+</button>
+    </form>
 </div>
 
 <div class="todo-wrapper" *ngFor="let item of apiDataRender; trackBy: trackByFn">
@@ -11,6 +20,6 @@
         <span class="item">{{item.text}}</span>
         <button (click)='deleteItem(item)'>&times;</button>
     </div>
-    
-                                        <!-- ITEM RENDERING -->
-</div> 
+
+    <!-- ITEM RENDERING -->
+</div>
