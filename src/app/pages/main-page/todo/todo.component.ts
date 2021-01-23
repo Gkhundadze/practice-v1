@@ -28,6 +28,8 @@ export class TodoComponent implements OnInit {
   submitForm(inputForm:FormGroup): void{
     if(inputForm.valid){     
       this.apiData.sendTaskToApi(inputForm.value).subscribe((res)=>{
+        this.inputForm.reset();
+        this.getData();
       })
     }else{
       alert('რამე ჩაწერე ბიჭო!');
