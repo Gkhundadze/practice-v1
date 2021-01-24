@@ -59,8 +59,7 @@
                 <p class="">view all news</p>
             </a>
         </div>
-        <div  class="card-box-parrent disp-flex just-sb text-trans-u">
-
+        <div  class="card-box-parrent disp-flex just-se text-trans-u">
             <div *ngFor='let item of newsToRender'>
                 <a [routerLink]="['/news/detailed']">
                     <article class="card-box wid-100">
@@ -68,9 +67,7 @@
                         <h2 class="card-box-title">{{item.title}}</h2>
                     </article>
                 </a>
-                
             </div>
-            
             <!-- <article class="card-box wid-100">
                 <img src="../assets/images/card-section/img-2.jpg" alt="card image" class="card-box-img wid-100 disp-block">
                 <h2 class="card-box-title">online marketing</h2>

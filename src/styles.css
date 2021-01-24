@@ -94,6 +94,12 @@ a{
 .just-sb{
     justify-content: space-between;
 }
+.just-se{
+    justify-content: space-evenly;
+}
+.just-sa{
+    justify-content: space-around;
+}
 .just-c{
     justify-content: center;
 }
