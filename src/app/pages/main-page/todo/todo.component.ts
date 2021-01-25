@@ -1,6 +1,7 @@
 import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ApiData } from 'src/app/interfaces/api-data';
 import { GetFromApiService } from 'src/app/sevices/get-from-api.service';
 
@@ -14,12 +15,14 @@ export class TodoComponent implements OnInit {
   public inputForm:FormGroup;
   constructor(
     private apiData: GetFromApiService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: ActivatedRoute
     
     ) { }
 
   ngOnInit(): void {
-   this.getData();
+    this.apiDataRender = this.router.snapshot.data.firstResolver.data;
+    
    this.inputForm = this.fb.group({
      text: ["", [Validators.required]]
    });

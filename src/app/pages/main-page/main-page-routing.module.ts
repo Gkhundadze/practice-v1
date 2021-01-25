@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { GetFromApiResolver } from 'src/app/resolver/get-from-api.resolver';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { MainComponent } from './main/main.component';
 import { TodoComponent } from './todo/todo.component';
@@ -11,7 +12,10 @@ const routes: Routes = [
   },
   {
     path: 'todos',
-    component: TodoComponent
+    component: TodoComponent,
+    resolve: {
+      firstResolver: GetFromApiResolver
+    }
   },
   {
     path: 'calculator',
