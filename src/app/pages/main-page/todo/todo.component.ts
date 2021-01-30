@@ -19,7 +19,6 @@ export class TodoComponent implements OnInit {
     private router: ActivatedRoute
     
     ) { }
-
   ngOnInit(): void {
     this.apiDataRender = this.router.snapshot.data.firstResolver.data;
     
